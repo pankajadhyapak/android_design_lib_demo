@@ -1,32 +1,59 @@
-<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.w3effects.designlibrary.MainActivity"
-android:id="@+id/drawer_layout"
-    >
+    android:orientation="vertical"
+    tools:context="com.w3effects.designlibrary.MainActivity">
 
-    <LinearLayout
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/app_bar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
-        
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/app_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/primary"
-            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            android:minHeight="?attr/actionBarSize"/>
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        android:background="@color/primary"
+        android:minHeight="?attr/actionBarSize"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <android.support.design.widget.NavigationView
-        android:id="@+id/main_drawer"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:headerLayout="@layout/drawer_header"
-        app:menu="@menu/menu_drawer" />
-</android.support.v4.widget.DrawerLayout>
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Login Screen"
+                android:id="@+id/loginBtn"
+                android:layout_gravity="center_horizontal"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="61dp"
+                android:layout_marginStart="61dp" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Property Items"
+                android:id="@+id/detail"
+
+                android:layout_gravity="center_horizontal"
+                android:layout_alignTop="@+id/loginBtn"
+                android:layout_toRightOf="@+id/loginBtn"
+                android:layout_toEndOf="@+id/loginBtn" />
+        </RelativeLayout>
+
+        <android.support.design.widget.NavigationView
+            android:id="@+id/main_drawer"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/drawer_header"
+            app:menu="@menu/menu_drawer" />
+    </android.support.v4.widget.DrawerLayout>
+</LinearLayout>
